@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mapmo">
+    <!-- 위치정보 접근 허용을 위한 퍼미션 -->
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_foreground"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".viewMemoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
+        <activity android:name=".addMemoActivity"/>
+        <activity android:name=".AppInfo"/>
+        <activity android:name=".memoListActivity"/>
+        <activity android:name=".Setting"/>
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Splash"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_maps"
+            android:windowSoftInputMode="adjustResize|adjustPan">
+
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDmJeJSKkCxJwz_VRT-G3AQN7lewrzdZvs" />
+
+        <service android:name=".ExampleService" />
+
+        <service android:name=".ExampleService" />
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+</manifest>
