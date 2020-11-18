@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_main"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E2142"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/searchPt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="9"
+            android:ems="10"
+            android:hint=" 주소 검색"
+            android:fontFamily="@font/goyang"
+            android:textStyle="bold"
+            android:backgroundTint="@android:color/white"
+            android:inputType="textPersonName"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+
+        <ImageButton
+            android:id="@+id/menubtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="9dp"
+            app:srcCompat="@drawable/ic_more_vert_black_24dp"
+            android:background="#1E2142"
+            android:onClick="mOnClick"/>
+
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchLayout"
+        android:layout_marginTop="-1dp"
+        tools:context=".MapsActivity">
+
+
+    </fragment>
+
+    <TextView
+        android:id="@+id/selectAddressTv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_above="@+id/addMemoBt"
+        android:layout_marginBottom="0dp"
+        android:background="#1E2142"
+        android:gravity="center"
+        android:text="Address"
+        android:fontFamily="@font/goyang"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/addMemoBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map"
+        android:layout_marginBottom="0dp"
+        android:background="#1E2142"
+        android:gravity="center"
+        android:fontFamily="@font/goyang"
+        android:textStyle="bold"
+        android:text="메모 추가"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
